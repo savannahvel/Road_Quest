@@ -1,17 +1,17 @@
 [
   {
     "departure": "1-1-2020",
-    "description": "Teaxs trip",
+    "trip_name": "Teaxs trip",
     "is_active": 1
   },
   {
     "departure": "5/6/2023",
-    "description": "Las Vegas B-Day",
+    "trip_name": "Las Vegas B-Day",
     "is_active": 0
   },
   {
     "departure": "4/3/2022",
-    "description": "New York Meeting",
+    "trip_name": "New York Meeting",
     "is_active": 1
   }
 ]

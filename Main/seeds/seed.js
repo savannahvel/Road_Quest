@@ -7,7 +7,7 @@ const Makrers = require("./Markers.json");
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData, {
+  const Trips = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
