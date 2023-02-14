@@ -39,4 +39,6 @@ npm i
 - Matthew Bowman https://github.com/Mbowman1221
 - Carson Garbe https://github.com/carsongarbe
 - Sam Jensen https://github.com/Samualjensen
+
+Image by <a href="https://www.freepik.com/free-vector/flat-travel-background_3765285.htm#query=road%20trip&position=19&from_view=keyword&track=sph">Freepik</a>
 ### Questions
