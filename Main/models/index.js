@@ -1,5 +1,5 @@
-// const User = require('./users');
-// const Trips = require('./trips');
+const User = require('./users');
+const Trips = require('./trips');
 // const SharedTrips = require('./shared-trips');
 // const Markers = require('./shared-trips');
 
@@ -27,9 +27,9 @@
 //     foreignKey: 'trip_id',
 // });
 
-// module.exports = {
-//     User,
-//     Trips,
-//     SharedTrips,
-//     Markers,
-// };
+module.exports = {
+    User,
+    Trips,
+    // SharedTrips,
+    // Markers,
+};
