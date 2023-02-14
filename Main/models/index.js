@@ -3,17 +3,17 @@ const Trips = require('./trips');
 // const SharedTrips = require('./shared-trips');
 // const Markers = require('./shared-trips');
 
-// User.hasMany(Trips, {
-//     foreignKey: 'user_id',
-// });
+User.hasMany(Trips, {
+    foreignKey: 'user_id',
+});
 
-// Trips.belongsTo(User , {
-//     foreignKey: 'user_id',
-// });
+Trips.belongsTo(User , {
+    foreignKey: 'user_id',
+});
 
-// Trips.hasMany(User, {
-//     foreignKey: 'user_id',
-// });
+Trips.hasMany(User, {
+    foreignKey: 'user_id',
+});
 
 // SharedTrips.hasMany(User, {
 //     foreignKey: 'user_id',
