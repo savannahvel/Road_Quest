@@ -27,7 +27,7 @@ SharedTrips.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'shared-trips',
+        modelName: 'SharedTrips',
     }
 );
 

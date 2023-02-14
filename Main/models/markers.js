@@ -29,7 +29,7 @@ Markers.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'markers',
+        modelName: 'Markers',
     }
 );
 
