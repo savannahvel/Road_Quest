@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Road Quest</title>
+    
+    <link rel="shortcut icon" href="https://picocss.com/favicon.ico">
+    <link rel="canonical" href="https://picocss.com/examples/sign-in/">
+    
+    <!-- Pico.css -->
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
+    
+    <!-- Custom styles for this example -->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+    <header>
+        <h1>
+            Road Quest
+        </h1>
+        <!-- Only display the logout button if the user is logged in -->
+        {{#if logged_in}}
+         {{!-- Navbar --}}
+        <nav class="container-fluid">
+            <ul>
+                <li><strong>Road Quest</strong></li>
+            </ul>
+            <ul>
+                <li><a href="#">Plan a Trip</a></li>
+                <li><a href="#">Past Trips 2</a></li>
+                <li id="logout"><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+        {{/if}}
+    </header>
+    <main class="">
+        {{{ body }}}
+    </main>
+    <footer>
+
+    </footer>
+
+    <!-- Only include the logout script if the user is logged in -->
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
