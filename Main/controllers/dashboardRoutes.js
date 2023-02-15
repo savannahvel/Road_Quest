@@ -26,6 +26,21 @@ router.get('/', async (req, res) => {
     })
 })
 
+router.get('/plan', async (req, res) => {
+    // Verify user is logged in
+    // if (!req.session.user_id) {
+    //     res.redirect('/login');
+    //     return;
+    // }
+
+    res.render('dashboard', {
+        style: 'maps.css',
+        script: 'script.js',
+        title: 'Plan A Trip',
+        PlanTrip: true,
+    })
+})
+
 // If user has no trips planned:
 
 module.exports = router;
