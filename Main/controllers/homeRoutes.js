@@ -8,4 +8,4 @@ router.get('/', async (req, res) => {
     res.render('login')
 })
 
-module.export = router;
+module.exports = router;
