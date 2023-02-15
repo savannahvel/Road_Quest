@@ -5,7 +5,9 @@ const router = require('express').Router();
 
 //sign in page
 router.get('/', async (req, res) => {
-    res.render('login')
+    res.render('login', {
+        style: 'signin.css'
+    })
 })
 
-module.export = router;
+module.exports = router;
