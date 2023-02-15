@@ -1,16 +1,18 @@
 <div class="container">
     <header>
-        <h2 id="page-title">Upcoming Trip</h2>
+        <h2 id="page-title">{{title}}</h2>
     </header>
     <article style="margin-top: 1rem;">
         <div class="parent">
             <div id="map" class="div1"> </div>
+            {{#if UpcomingTrip}}
             <div class="div2">
                 <h5>Trip Details</h5>
                 <p>Starting From: </p>
                 <p>Going To: </p>
                 <p>Travel Time: </p>
             </div>
+            {{/if}}
         </div>
     </article>
 </div>

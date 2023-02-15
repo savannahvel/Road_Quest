@@ -20,7 +20,9 @@ router.get('/', async (req, res) => {
 
     res.render('dashboard', {
         style: 'maps.css',
-        script: 'script.js'
+        script: 'script.js',
+        title: 'Upcoming Trip',
+        UpcomingTrip: true,
     })
 })
 
