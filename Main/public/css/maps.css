@@ -1,12 +1,7 @@
 /* Hero Image */
 #map {
-    max-height: 100%;
-    min-width: 100%;
-    object-fit: cover;
-    vertical-align: bottom;
-  background-image: url("../images/1984494.jpg");
-  /* background-position: center;
-  background-size: cover; */
+    height: 500px; /* The height is 400 pixels */
+    width: 100%; /* The width is the width of the web page */
 }
 
 .parent {
@@ -22,4 +17,11 @@ grid-row-gap: 0px;
   grid-area: 1 / 4 / 6 / 6; 
   margin-left: 2rem;
   display: inline-block;
+}
+
+#page-title {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
