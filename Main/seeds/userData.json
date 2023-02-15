@@ -1,17 +1,20 @@
 [
   {
-    "username": "Sal",
+    "name": "Sal",
     "password": "password12345",
+    "email":"123@gmail.com",
     "Avatar": "A1"
   },
   {
-    "username": "Lernantino",
+    "name": "Lernantino",
     "password": "password12345",
+    "email":"a123@gmail.com",
     "Avatar": "A2"
   },
   {
-    "username": "Amiko",
+    "name": "Amiko",
     "password": "password12345",
+    "email":"b123@gmail.com",
     "Avatar": "A3"
   }
 ]

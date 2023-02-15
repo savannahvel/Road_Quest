@@ -16,7 +16,7 @@ const hbs = exphbs.create();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-    secret: '',
+    secret: process.env.DB_SESSIONSECRET,
     cookie: {},
     resave: false,
     saveUninitialized: true,

@@ -8,7 +8,7 @@ Trips.init(
         id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            primary: true,
+            primaryKey: true,
             autoIncrement: true,
         },
         primary_owner: {
@@ -31,6 +31,8 @@ Trips.init(
             type: DataTypes.BOOLEAN,
             allowNull: false
         },
+    },
+    {
         sequelize,
         timestamps: false,
         freezeTableName: true,
