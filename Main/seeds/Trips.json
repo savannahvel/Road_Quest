@@ -11,7 +11,7 @@
   },
   {
     "departure": "4-3-2022",
-    "trip_name": "New York Meeting",
-    "is_active": true
+    "trip_name":"New York Meeting",
+    "is_active":true
   }
 ]

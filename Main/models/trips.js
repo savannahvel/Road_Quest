@@ -15,37 +15,28 @@ Trips.init(
 
     departure: {
       type: DataTypes.DATE,
+      allowNull: false,
      
     },
     trip_name: {
       type: DataTypes.STRING,
-
+      allowNull: false,
     },
     is_active: {
       type: DataTypes.BOOLEAN,
+      allowNull: false,
     },
     primary_owner: {
       type: DataTypes.INTEGER,
+      allowNull: false,
       referneces: {
-        model: "Users",
+        model: "users",
         key: "id",
       },
     },
   },
   {
-    // hooks: {
-    //   beforeCreate: async (newUserData) => {
-    //     newUserData.password = await bcrypt.hash(newUserData.password, 10);
-    //     return newUserData;
-    //   },
-    //   beforeUpdate: async (updatedUserData) => {
-    //     updatedUserData.password = await bcrypt.hash(
-    //       updatedUserData.password,
-    //       10
-    //     );
-    //     return updatedUserData;
-    //   },
-    // },
+
     sequelize,
     timestamps: false,
     freezeTableName: true,
