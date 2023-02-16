@@ -3,7 +3,7 @@ const { User, Trips } = require('../models');
 
 const userData = require('./userData.json');
 const tripData = require('./Trips.json');
-const Makrers = require("./Markers.json");
+const Markers = require("./Markers.json");
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
