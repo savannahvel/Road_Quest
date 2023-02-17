@@ -1,22 +1,36 @@
-const sequelize = require('../config/connection');
-const { User, Trips } = require('../models');
+const sequelize = require("../config/connection");
+const { User, Trips, Markers } = require("../models");
 
-const userData = require('./userData.json');
-const tripData = require('./Trips.json');
-const Markers = require("./Markers.json");
+const userData = require("./userData.json");
+const tripData = require("./Trips.json");
+const MarkersData = require("./Markers.json");
+
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const users = await User.bulkCreate(userData,{
+  const users = await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
 
+  const tripsArray = [];
+
   for (const trip of tripData) {
-    const tripss = await Trips.create({
+    const tripData = await Trips.create({
       ...trip,
       primary_owner: users[Math.floor(Math.random() * users.length)].id,
+      
     });
+    tripsArray.push(tripData)
+  
+  }
+
+  for (const marker of MarkersData) {
+    const markerTable = await Markers.create({
+      ...marker,
+      trip_id: tripsArray[Math.floor(Math.random() * tripsArray.length)].id,
+    });
+console.log(tripsArray);
   }
 
 

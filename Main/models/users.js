@@ -28,7 +28,6 @@ Users.init(
         isEmail: true,
       },
     },
-    
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -52,7 +51,7 @@ Users.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Users',
+    modelName: 'users',
   }
 );
 
