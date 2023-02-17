@@ -1,35 +1,27 @@
-const User = require('./users');
-const Trips = require('./trips');
-// const SharedTrips = require('./shared-trips');
-// const Markers = require('./shared-trips');
+const User = require("./users");
+const Trips = require("./trips");
+const Markers = require("./markers");
 
-// User.hasMany(Trips, {
-//     foreignKey: 'user_id',
-// });
 
-// Trips.belongsTo(User , {
-//     foreignKey: 'user_id',
-// });
+User.hasMany(Trips, {
+  foreignKey: "primary_owner",
+});
 
-// Trips.hasMany(User, {
-//     foreignKey: 'user_id',
-// });
+Trips.belongsTo(User, {
+  foreignKey: "primary_owner",
+  onDelete: "CASCADE",
+});
 
-// SharedTrips.hasMany(User, {
-//     foreignKey: 'user_id',
-// });
 
-// SharedTrips.hasMany(Trips, {
-//     foreignKey: 'trip_id',
-// });
-
-// Markers.belongsTo(Trips, {
-//     foreignKey: 'trip_id',
-// });
-
+Trips.hasMany(Markers,{
+  foreignKey:"trip_id"
+})
+Markers.belongsTo(Trips,{
+  foreignKey:"trip_id",
+  onDelete: "CASCADE"
+})
 module.exports = {
-    User,
-    Trips,
-    // SharedTrips,
-    // Markers,
+  User,
+  Trips,
+  Markers,
 };
