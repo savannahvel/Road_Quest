@@ -26,6 +26,10 @@ Trips.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
     },
+    is_shared: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+    },
     primary_owner: {
       type: DataTypes.INTEGER,
       allowNull: false,
