@@ -34,6 +34,7 @@ console.log(tripsArray);
   }
 
 
+
   process.exit(0);
 };
 
