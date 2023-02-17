@@ -6,6 +6,7 @@ const tripsRoutes = require('./api/trips-routes');
 const userRoutes = require('./api/user-routes');
 const homeRoutes = require('./homeRoutes');
 const dashboardRoutes = require('./dashboardRoutes');
+const sharedTripRoutes = require('./sharedRoutes');
 
 // router.use('/markers', markerRoutes);
 // router.use('/shared-trips', sharedTripRoutes);
@@ -13,5 +14,6 @@ router.use('/trips', tripsRoutes);
 router.use('/user', userRoutes);
 router.use('/', homeRoutes);
 router.use('/dashboard', dashboardRoutes);
+router.use('/sharedTrips', sharedTripRoutes);
 
 module.exports = router;
