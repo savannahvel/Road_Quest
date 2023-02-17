@@ -12,7 +12,7 @@ Markers.init(
             autoIncrement: true,
         },
         location: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         trip_id: {
