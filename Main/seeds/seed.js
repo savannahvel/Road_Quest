@@ -44,6 +44,7 @@ const seedDatabase = async () => {
 console.log(tripsArray);
   }
 
+
   process.exit(0);
 };
 
