@@ -6,12 +6,28 @@
         <div class="parent">
             <div id="map" class="div1"> </div>
             {{#if UpcomingTrip}}
+            {{#each trips as |trip| }}
+            {{log this}}
+            <div class="col-md-4">
+                <p>
+                    {{trips.id}}.
+                    {{trips_name}}
+                </p>
+            </div>
             <div class="div2">
+                <h5>Trip Details</h5>
+                <p>Starting From: {{trip.id}} </p>
+                <p>Going To: </p>
+                <p>Travel Time: </p>
+            </div>
+            {{/each}}
+
+            {{!-- <div class="div2">
                 <h5>Trip Details</h5>
                 <p>Starting From: </p>
                 <p>Going To: </p>
                 <p>Travel Time: </p>
-            </div>
+            </div> --}}
             {{else if SharedTrip}}
             <div class="div2">
                 <h5>Trip Details</h5>
