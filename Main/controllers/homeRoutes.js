@@ -1,6 +1,6 @@
-// const router = require('express').Router();
-// const { Users, Trips, Markers } = require('../../models');
-// const withAuth = require('../utils/auth');
+const router = require('express').Router();
+const { Users, Trips, Markers } = require('../models');
+const withAuth = require('../utils/auth');
 
 // router.get('/', (req, res) => {
 //     Post.findAll({
@@ -95,4 +95,15 @@
 //     });
 // });
 
-// module.exports = router;
+//sign in page
+router.get('/', async (req, res) => {
+    // if (req.session.logged_in) {
+    //     res.redirect('/');
+    //     return;
+    // }
+    res.render('login', {
+        style: 'signin.css'
+    })
+});
+
+module.exports = router;

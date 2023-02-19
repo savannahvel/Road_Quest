@@ -4,9 +4,9 @@ let geocoder;
 let destination;
 let destinationLat;
 let destinationLng;
+let tripLocationsContainer = document.getElementById('trip-details')
 
-// TODO: Fetch locations from database and populate html - create buttons
-// <button class="location secondary">{location}</button>
+
 // TODO: Get map owner's username and template into title. {Usernames}'s Shared Map
 
 //initial map 
@@ -38,28 +38,31 @@ function codeAddress(address) {
 google.maps.event.addDomListener(window, 'load', initMap);
 
 // on window load, load all the markers for the map
-window.onload = function(){
-   tripLocations.forEach(location => {
-       codeAddress(location.innerHTML)
-   }); 
-}
+window.onload = function () {
+    let tripLocations = document.querySelectorAll('.location');
+    console.log(tripLocations);
 
-// on click of location button, center map and zoom in
-tripLocations.forEach(location => {
-    location.addEventListener('click', function () {
-        let specificLocation = location.innerHTML;
-        geocoder.geocode( { 'address': specificLocation}, function(results, status) {
-            if (status == 'OK') {
-                map.setCenter(results[0].geometry.location);
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location
-                });
-                if (results[0].geometry.viewport) 
-                    map.fitBounds(results[0].geometry.viewport);
-            } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-            }
-        });
+    tripLocations.forEach(location => {
+        codeAddress(location.innerHTML)
+    });
+
+    // on click of location button, center map and zoom in
+    tripLocations.forEach(location => {
+        location.addEventListener('click', function () {
+            let specificLocation = location.innerHTML;
+            geocoder.geocode({ 'address': specificLocation }, function (results, status) {
+                if (status == 'OK') {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                    if (results[0].geometry.viewport)
+                        map.fitBounds(results[0].geometry.viewport);
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        })
     })
-})
+};
