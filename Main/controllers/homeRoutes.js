@@ -102,7 +102,8 @@ router.get('/', async (req, res) => {
     //     return;
     // }
     res.render('login', {
-        style: 'signin.css'
+        style: 'signin.css',
+        script: 'login.js'
     })
 });
 
