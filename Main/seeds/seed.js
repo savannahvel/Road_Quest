@@ -5,17 +5,6 @@ const userData = require("./userData.json");
 const tripData = require("./Trips.json");
 const MarkersData = require("./Markers.json");
 
-// const sequelizeTrips = async (users) =>{
-//   const tripsArray = [];
-//   for (const trip of tripData) {
-//     const usedTrip = await Trips.create({
-//       ...trip,
-//       primary_owner: users[Math.floor(Math.random() * users.length)].id,
-//     });
-//     tripsArray.push(usedTrip);
-//   }
-//   return tripsArray;
-// }
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
@@ -43,6 +32,7 @@ const seedDatabase = async () => {
     });
 console.log(tripsArray);
   }
+
 
 
   process.exit(0);

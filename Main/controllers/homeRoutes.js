@@ -1,36 +1,98 @@
-const router = require('express').Router();
-// const { User } = require('../models');
+// const router = require('express').Router();
+// const { Users, Trips, Markers } = require('../../models');
 // const withAuth = require('../utils/auth');
 
-
-// router.get('/', withAuth, async (req, res) => {
-//   try {
-//     const userData = await User.findAll({
-//       attributes: { exclude: ['password'] },
-//       order: [['name', 'ASC']],
+// router.get('/', (req, res) => {
+//     Post.findAll({
+//         include: [
+//             {
+//                 model: Users
+//             }
+//         ]
+//     }).then((posts) => {
+//         console.log(posts);
+//         posts = posts.map((post) => post.get({ plain: true }));
+//         res.render('home', { posts });
 //     });
-
-//     const users = userData.map((project) => project.get({ plain: true }));
-
-//     res.render('homepage', {
-//       users,
-//       // Pass the logged in flag to the template
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
 // });
 
-//sign in page
-router.get('/', async (req, res) => {
-    // if (req.session.logged_in) {
-    //     res.redirect('/');
-    //     return;
-    // }
-    res.render('login', {
-        style: 'signin.css'
-    })
-})
+// router.get('/login', (req, res) => {
+//     if (req.session.loggedIn) {
+//         res.redirect('/');
+//         return;
+//     }
+//     res.render('login');
+// });
 
-module.exports = router;
+// router.get('/signup/', (req, res) => {
+//     if (req.session.loggedIn) {
+//         res.redirect('/');
+//         return;
+//     }
+//     res.render('signup');
+// });
+
+// router.get('/trips/:id', (req, res) => {
+//     Post.findOne({
+//         where: {
+//             id: req.params.id
+//         },
+//         include: [
+//             {
+//                 model: User
+//             },
+//             {
+//                 model: Trips
+//             }
+//         ]
+//     }).then((post) => {
+//         if (!post) {
+//             res.status(404).json({ message: 'No trip found with this id' });
+//             return;
+//         }
+//         post = post.get({ plain: true });
+//         res.render('edit-trip', { Trips });
+//     });
+// });
+
+// router.get('/dashboard', withAuth, (req, res) => {
+//     Post.findAll({
+//         where: {
+//             user_id: req.session.user_id
+//         },
+//         include: [
+//             {
+//                 model: Users
+//             }
+//         ]
+//     }).then((posts) => {
+//         posts = posts.map((post) => post.get({ plain: true }));
+//         res.render('dashboard', { posts });
+//     });
+// });
+
+// router.get('/trips/:id', withAuth, (req, res) => {
+//     Post.findOne({
+//         where: {
+//             id: req.params.id
+//         },
+//         include: [
+//             {
+//                 model: Users
+//             },
+//             {
+//                 model: Trips
+//             }
+//         ]
+//     }).then((post) => {
+//         if (!post) {
+//             res.status(404).json({ message: 'No trip found with this id' });
+//             return;
+//         }
+//         post = post.get({ plain: true });
+//         console.log(Trips)
+//         res.render('Trips', { Trips });
+//     });
+// });
+
+// module.exports = router;
