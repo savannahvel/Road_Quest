@@ -1,8 +1,9 @@
 const router = require('express').Router();
-const { Project, Trips} = require('../../models');
+const { Trips } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-
-router.get('/', async (req, res) => {
+// find all trips
+router.get('/', withAuth, async (req, res) => {
   try {
     const tripData = await Trips.findAll();
     res.status(200).json(tripData);
@@ -10,34 +11,64 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
-router.post('/', async (req, res) => {
+
+// create new trip
+router.post('/', withAuth, async (req, res) => {
   try {
-    const newProject = await Project.create({
-      ...req.body,
-      user_id: req.session.user_id,
+    const tripsData = await Trips.create({
+      departure: req.body.departure,
+      trip_name: req.body.trip_name,
+      is_active: req.body.is_active,
+      is_shared: req.body.is_shared,
+      primary_owner: req.body.primary_owner,
     });
 
-    res.status(200).json(newProject);
+    req.session.save(() => {
+      req.session.loggedIn = true;
+
+      res.status(200).json(tripsData);
+    });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
-router.delete('/:id', async (req, res) => {
+// update trip by id
+router.put('/:id', withAuth, async (req, res) => {
+  console.log(req.body)
   try {
-    const projectData = await Project.destroy({
+    const tripsData = await Trips.update(req.body, {
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
-    if (!projectData) {
-      res.status(404).json({ message: 'No project found with this id!' });
+    if (!tripsData) {
+      res.status(404).json({ message: 'No post found with this id' });
       return;
     }
 
-    res.status(200).json(projectData);
+    res.status(200).json(tripsData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// delete trip by id
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const tripsData = await Trips.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!tripsData) {
+      res.status(404).json({ message: 'No trip found with this id!' });
+      return;
+    }
+
+    res.status(200).json(tripsData);
   } catch (err) {
     res.status(500).json(err);
   }
