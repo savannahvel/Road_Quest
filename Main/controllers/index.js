@@ -7,9 +7,11 @@ const homeRoutes = require('./homeRoutes');
 const dashboardRoutes = require('./dashboardRoutes');
 const sharedTripRoutes = require('./sharedRoutes');
 
+// API routes
 router.use('/markers', markerRoutes);
 router.use('/trips', tripsRoutes);
 router.use('/user', userRoutes);
+// FE routes
 router.use('/', homeRoutes);
 router.use('/dashboard', dashboardRoutes);
 router.use('/sharedTrips', sharedTripRoutes);

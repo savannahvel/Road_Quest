@@ -23,7 +23,7 @@
     
 </head>
 
-<body>
+<body style="padding: 1rem;">
     <header style="padding: 1px;">
         <!-- Only display the logout button if the user is logged in -->
         {{!-- {{#if logged_in}} --}}
@@ -35,9 +35,10 @@
                 <li>
                     <details role="list" dir="rtl">
                         <summary class="container" aria-haspopup="listbox" role="link">Menu</summary>
-                        <ul role="listbox">
+                        <ul class="secondary" role="listbox">
+                            <li><a href="#" class="contrast">View Trips</a></li>
                             <li><a href="#" class="contrast">Plan a Trip</a></li>
-                            <li><a href="#" class="contrast">Past Trips</a></li>
+                            <li><a href="#" class="contrast">Shared Trips</a></li>
                             <li><a href="#" class="contrast">Logout</a></li>
                         </ul>
                     </details>
