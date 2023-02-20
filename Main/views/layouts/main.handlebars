@@ -13,9 +13,9 @@
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
     
     <!-- Custom styles for this example -->
-    <link rel="stylesheet" href="css/{{style}}">
+    <link rel="stylesheet" href="/css/{{style}}">
     {{#if singleSharedTrip}}
-    <script src="js/sharedTripsScripts.js"></script>
+    <script src="/js/sharedTripsScripts.js"></script>
     {{/if}}
     {{!-- Google Maps Api --}}
     <script type="text/javascript"
@@ -69,6 +69,6 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 {{#unless SharedTripsAll}}
-<script src="js/{{script}}"></script>
+<script src="/js/{{script}}"></script>
 {{/unless}}
 </html>

@@ -32,7 +32,6 @@ router.post('/', async (req, res) => {
 
 // update marker by id 
 router.put('/:id', async (req, res) => {
-    console.log(req.body)
     try {
         const markersData = await Markers.update(req.body, {
             where: {

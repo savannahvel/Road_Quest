@@ -24,7 +24,6 @@ router.get('/', async (req, res) => {
         }).catch((err) => {
             res.json(err);
         });
-        console.log(tripsData);
         const trips = tripsData.map((trip) => trip.get({ plain: true }));
 
         if (!trips) {
@@ -54,14 +53,19 @@ router.get('/:id', async (req, res) => {
     //     return;
     // }
     try {
-        const tripData = await Trips.findByPk(req.params.id);
-
-        // const trip = tripData.get({ plain: true });
+        const tripData = await Trips.findByPk(req.params.id, {
+            include: [{
+                model: User,
+                as: 'user'
+            }],
+        });
 
         if(!tripData) {
             res.status(404).json({message: 'No trip found with this id!'});
             return;
         }
+
+        const trip = tripData.get({ plain: true });
 
         res.render('singleSharedTrip', {
             style: 'maps.css',
