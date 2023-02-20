@@ -34,11 +34,11 @@
             <ul>
                 <li>
                     <details role="list" dir="rtl">
-                        <summary class="container" aria-haspopup="listbox" role="link">Menu</summary>
-                        <ul class="secondary" role="listbox">
+                        <summary class="container secondary" aria-haspopup="listbox" role="list" >Menu</summary>
+                        <ul role="listbox">
                             <li><a href="#" class="contrast">View Trips</a></li>
                             <li><a href="#" class="contrast">Plan a Trip</a></li>
-                            <li><a href="#" class="contrast">Shared Trips</a></li>
+                            <li><a href="/sharedTrips" class="contrast">Shared Trips</a></li>
                             <li><a href="#" class="contrast">Logout</a></li>
                         </ul>
                     </details>
@@ -68,5 +68,7 @@
     {{/if}}
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+{{#unless SharedTripsAll}}
 <script src="js/{{script}}"></script>
+{{/unless}}
 </html>

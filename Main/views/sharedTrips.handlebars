@@ -1,0 +1,14 @@
+<div class="container">
+    <header>
+        <h2 class="page-title">Shared Trips</h2>
+        <p class="page-title">Click on a trip to view destinations</p>
+    </header>
+    <article style="margin-top: 1rem;">
+        <div class="wrapper">
+            <!-- For each dish in the array of dish objects, the following <div> will be rendered. -->
+            {{#each trips as |trip|}}
+            <button class="secondary">{{trip.user.name}}'s Trip: {{trip.trip_name}}</button>
+            {{/each}}
+        </div>
+    </article>
+</div>

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Trips } = require('../models/trips');
+const { Trips, User } = require('../models/');
 
 // Pages seen once logged in
 
@@ -12,18 +12,43 @@ router.get('/', async (req, res) => {
     // }
 
     // Write route that queries for uncompleted trips
-    // try {
-    //     const userTripsData = await Trips.findOne({
+    try {
+        // const usersData = await User.findAll({
 
-    //     })
-    // } catch (err) {}
+        // });
+        const tripsData = await Trips.findAll({
+            include: [{
+                model: User,
+                as: 'user'
+            }],
+            where: {
+                is_active: true,
+                is_shared: true,
+            }
+        }).catch((err) => {
+            res.json(err);
+        });
+        console.log(tripsData);
+        const trips = tripsData.map((trip) => trip.get({ plain: true }));
 
-    res.render('dashboard', {
-        style: 'maps.css',
-        script: 'markerMap.js',
-        title: 'Shared Trip',
-        SharedTrip: true,
-    })
+        if (!trips) {
+            res
+                .status(400)
+                .json({ message: 'Could not find any trips' });
+            return;
+        }
+        // res.render('all', { trips });
+        res.render('sharedTrips', {
+            style: 'sharedTrips.css',
+            title: 'Shared Trip',
+            SharedTripsAll: true,
+            trips,
+        })
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+
 })
 
 // Secondary user - get specific trip
@@ -36,9 +61,9 @@ router.get('/:id', async (req, res) => {
 
     res.render('dashboard', {
         style: 'maps.css',
-        script: 'script.js',
-        title: 'Plan A Trip',
-        PlanTrip: true,
+        script: 'markerMap.js',
+        title: 'Shared Trip',
+        SharedTrip: true,
     })
 })
 
