@@ -16,7 +16,6 @@ router.get('/', async (req, res) => {
         const tripsData = await Trips.findAll().catch((err) => {
             res.json(err);
         });
-        console.log(tripsData);
         const trips = tripsData.map((trip) => trip.get({ plain: true }));
 
         if (!trips) {
