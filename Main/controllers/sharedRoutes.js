@@ -11,11 +11,7 @@ router.get('/', async (req, res) => {
     //     return;
     // }
 
-    // Write route that queries for uncompleted trips
     try {
-        // const usersData = await User.findAll({
-
-        // });
         const tripsData = await Trips.findAll({
             include: [{
                 model: User,
@@ -37,10 +33,9 @@ router.get('/', async (req, res) => {
                 .json({ message: 'Could not find any trips' });
             return;
         }
-        // res.render('all', { trips });
+
         res.render('sharedTrips', {
             style: 'sharedTrips.css',
-            title: 'Shared Trip',
             SharedTripsAll: true,
             trips,
         })
@@ -51,20 +46,33 @@ router.get('/', async (req, res) => {
 
 })
 
-// Secondary user - get specific trip
+// Get specific trip
 router.get('/:id', async (req, res) => {
     // Verify user is logged in
     // if (!req.session.user_id) {
     //     res.redirect('/login');
     //     return;
     // }
+    try {
+        const tripData = await Trips.findByPk(req.params.id);
 
-    res.render('dashboard', {
-        style: 'maps.css',
-        script: 'markerMap.js',
-        title: 'Shared Trip',
-        SharedTrip: true,
-    })
+        // const trip = tripData.get({ plain: true });
+
+        if(!tripData) {
+            res.status(404).json({message: 'No trip found with this id!'});
+            return;
+        }
+
+        res.render('singleSharedTrip', {
+            style: 'maps.css',
+            script: 'markerMap.js',
+            title: 'Shared Trip',
+            singleSharedTrip: true,
+            trip,
+        })
+      } catch (err) {
+          res.status(500).json(err);
+      };     
 })
 
 module.exports = router;

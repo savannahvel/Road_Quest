@@ -5,9 +5,9 @@
     </header>
     <article style="margin-top: 1rem;">
         <div class="wrapper">
-            <!-- For each dish in the array of dish objects, the following <div> will be rendered. -->
+            <!-- For each trip in the array of trip objects, the following <a> will be rendered. -->
             {{#each trips as |trip|}}
-            <button class="secondary">{{trip.user.name}}'s Trip: {{trip.trip_name}}</button>
+            <a href="/sharedTrips/{{trip.id}}" role="button" class="secondary">{{trip.user.name}}'s Trip: {{trip.trip_name}}</a>
             {{/each}}
         </div>
     </article>
