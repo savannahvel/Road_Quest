@@ -1,5 +1,3 @@
-// TODO: Fetch locations from database and populate html - create buttons
-// <button class="location secondary">{location}</button>
 // TODO: Get map owner's username and template into title. {Usernames}'s Shared Map
 
 function getLocations() {
