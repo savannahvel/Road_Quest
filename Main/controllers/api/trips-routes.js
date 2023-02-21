@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Trips } = require('../../models');
+const { Trips, Markers, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // find all trips
@@ -9,6 +9,32 @@ router.get('/', withAuth, async (req, res) => {
     res.status(200).json(tripData);
   } catch (err) {
     res.status(500).json(err);
+  }
+});
+
+// find trip by id 
+router.get('/:id', async (req, res) => {
+  try {
+      const tripsData = await Trips.findOne({
+          where: {
+              id: req.params.id,
+          },
+          include: [
+              {
+                  model: Markers,
+                  attributes: [ 'id', 'location' ],
+              },
+          ]
+      });
+
+      if (!tripsData) {
+          res.status(404).json({ message: 'No trip found with that id' });
+          return;
+      }
+
+      res.status(200).json(tripsData);
+  } catch (err) {
+      res.status(500).json(err);
   }
 });
 
