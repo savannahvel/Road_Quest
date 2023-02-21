@@ -35,7 +35,6 @@ router.post('/', withAuth, async (req, res) => {
 
 // update trip by id
 router.put('/:id', withAuth, async (req, res) => {
-  console.log(req.body)
   try {
     const tripsData = await Trips.update(req.body, {
       where: {

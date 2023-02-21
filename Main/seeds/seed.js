@@ -30,7 +30,6 @@ const seedDatabase = async () => {
       ...marker,
       trip_id: tripsArray[Math.floor(Math.random() * tripsArray.length)].id,
     });
-console.log(tripsArray);
   }
 
 

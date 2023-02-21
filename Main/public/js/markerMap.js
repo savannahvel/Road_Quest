@@ -40,7 +40,6 @@ google.maps.event.addDomListener(window, 'load', initMap);
 // on window load, load all the markers for the map
 window.onload = function () {
     let tripLocations = document.querySelectorAll('.location');
-    console.log(tripLocations);
 
     tripLocations.forEach(location => {
         codeAddress(location.innerHTML)

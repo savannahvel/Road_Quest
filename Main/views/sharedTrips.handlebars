@@ -1,0 +1,14 @@
+<div class="container">
+    <header>
+        <h2 class="page-title">Shared Trips</h2>
+        <p class="page-title">Click on a trip to view destinations</p>
+    </header>
+    <article style="margin-top: 1rem;">
+        <div class="wrapper">
+            <!-- For each trip in the array of trip objects, the following <a> will be rendered. -->
+            {{#each trips as |trip|}}
+            <a href="/sharedTrips/{{trip.id}}" role="button" class="secondary">{{trip.user.name}}'s Trip: {{trip.trip_name}}</a>
+            {{/each}}
+        </div>
+    </article>
+</div>

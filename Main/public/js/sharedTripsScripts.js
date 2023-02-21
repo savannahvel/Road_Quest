@@ -23,7 +23,6 @@ async function createLocationButtons() {
         // append to trip location container
         tripLocationsContainer.append(locationButtonEl);
     }
-    console.log("createLocationButtons Completed")
 }
 
 createLocationButtons();
