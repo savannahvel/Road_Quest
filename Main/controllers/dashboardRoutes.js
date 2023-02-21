@@ -26,9 +26,9 @@ router.get('/', async (req, res) => {
         }
         // res.render('all', { trips });
         res.render('dashboard', {
-            style: 'maps.css',
-            script: 'script.js',
-            title: 'Upcoming Trip',
+            style: 'route.css',
+            script: 'routemap.js',
+            title: 'Plan A Trip',
             UpcomingTrip: true,
             trips,
         });
