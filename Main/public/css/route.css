@@ -1,0 +1,36 @@
+html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    /* display: flex;
+    align-items: center;
+    justify-content:center; */
+  }
+  
+  
+  #map-canvas{
+    height: 700px; /* The height is 400 pixels */
+    width: 100%; /* The width is the width of the web page */
+  }
+
+  #panel { 
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -180px;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+  }
+
+ 
+
+  #directions_panel{
+    margin:20px;
+   
+  }
+
+  .parent {
+    display: flex;
+    }
