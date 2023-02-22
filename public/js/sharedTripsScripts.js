@@ -12,10 +12,7 @@ async function createLocationButtons() {
     let tripIdData = document.querySelector('#trip-id');
     const tripId = tripIdData.value;
     const locationsData = await getLocations();
-    console.log(tripId)
-    // console.log(locationsData);
     for (let i = 0; i < locationsData.length; i++) {
-        console.log(locationsData[i].Trip.id)
         if (locationsData[i].Trip.id == tripId) {
             // create element
             let locationButtonEl = document.createElement('button');

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Trips, User } = require('../models/');
+const { Trips, User } = require('../models');
 
 // Pages seen once logged in
 
