@@ -1,18 +1,15 @@
 [
   {
-    "departure": "1-1-2020",
     "trip_name": "Teaxs trip",
     "is_active": true,
     "is_shared": false
   },
   {
-    "departure": "5-6-2023",
     "trip_name": "Las Vegas B-Day",
     "is_active": false,
     "is_shared": true
   },
   {
-    "departure": "4-3-2022",
     "trip_name":"New York Meeting",
     "is_active":true,
     "is_shared": true
