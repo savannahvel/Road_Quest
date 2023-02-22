@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
         style: 'signin.css',
         script: 'login.js'
     })
+})
 
 // redirects user to homepage once logged in
 router.get('/login', (req, res) => {
@@ -27,4 +28,4 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
     res.render('signup');
 });
-module.exports = router;
+    module.exports = router;
