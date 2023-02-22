@@ -14,9 +14,9 @@
     
     <!-- Custom styles for this example -->
     <link rel="stylesheet" href="/css/{{style}}">
-    {{#if singleSharedTrip}}
+    {{!-- {{#if singleSharedTrip}}
     <script src="/js/sharedTripsScripts.js"></script>
-    {{/if}}
+    {{/if}} --}}
     {{!-- Google Maps Api --}}
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry,places&key=AIzaSyAUPZyYJni5F1BhSHCcAAn10FC8pxlLI90&callback=initMap"></script>
@@ -36,10 +36,11 @@
                     <details role="list" dir="rtl">
                         <summary class="container secondary" aria-haspopup="listbox" role="list" >Menu</summary>
                         <ul role="listbox">
-                            <li><a href="#" class="contrast">View Trips</a></li>
-                            <li><a href="#" class="contrast">Plan a Trip</a></li>
+                            {{!-- <li><a href="#" class="contrast">View Trips</a></li> --}}
+                            <li><a href="/dashboard" class="contrast">Plan a Trip</a></li>
                             <li><a href="/sharedTrips" class="contrast">Shared Trips</a></li>
-                            <li><a href="#" class="contrast">Logout</a></li>
+                            <li><a href="#" class="contrast">Logout</a></li> 
+                            {{!-- on-click run function and logout page --}}
                         </ul>
                     </details>
                 </li>
