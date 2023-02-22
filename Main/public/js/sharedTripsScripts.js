@@ -1,5 +1,3 @@
-// TODO: Get map owner's username and template into title. {Usernames}'s Shared Map
-
 function getLocations() {
     return new Promise((resolve, reject) => { 
         fetch('/markers').then((resp) => {
@@ -11,17 +9,24 @@ function getLocations() {
 }
 
 async function createLocationButtons() {
+    let tripIdData = document.querySelector('#trip-id');
+    const tripId = tripIdData.value;
     const locationsData = await getLocations();
+    console.log(tripId)
+    // console.log(locationsData);
     for (let i = 0; i < locationsData.length; i++) {
-        // create element
-        let locationButtonEl = document.createElement('button');
-        locationButtonEl.className = 'location secondary';
+        console.log(locationsData[i].Trip.id)
+        if (locationsData[i].Trip.id == tripId) {
+            // create element
+            let locationButtonEl = document.createElement('button');
+            locationButtonEl.className = 'location secondary';
 
-        //Setting the text of the h3 element and p element.
-        locationButtonEl.textContent = locationsData[i].location;
+            //Setting the text of the h3 element and p element.
+            locationButtonEl.textContent = locationsData[i].location;
 
-        // append to trip location container
-        tripLocationsContainer.append(locationButtonEl);
+            // append to trip location container
+            tripLocationsContainer.append(locationButtonEl);
+        }
     }
 }
 
