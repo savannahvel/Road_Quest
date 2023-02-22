@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
         style: 'signin.css',
         script: 'login.js'
     })
+});
 
 // redirects user to homepage once logged in
 router.get('/login', (req, res) => {

@@ -15,26 +15,26 @@ router.get('/', withAuth, async (req, res) => {
 // find trip by id 
 router.get('/:id', async (req, res) => {
   try {
-      const tripsData = await Trips.findOne({
-          where: {
-              id: req.params.id,
-          },
-          include: [
-              {
-                  model: Markers,
-                  attributes: [ 'id', 'location' ],
-              },
-          ]
-      });
+    const tripsData = await Trips.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: [
+        {
+          model: Markers,
+          attributes: ['id', 'location'],
+        },
+      ]
+    });
 
-      if (!tripsData) {
-          res.status(404).json({ message: 'No trip found with that id' });
-          return;
-      }
+    if (!tripsData) {
+      res.status(404).json({ message: 'No trip found with that id' });
+      return;
+    }
 
-      res.status(200).json(tripsData);
+    res.status(200).json(tripsData);
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -42,12 +42,20 @@ router.get('/:id', async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
   try {
     const tripsData = await Trips.create({
-      departure: req.body.departure,
-      trip_name: req.body.trip_name,
-      is_active: req.body.is_active,
-      is_shared: req.body.is_shared,
-      primary_owner: req.body.primary_owner,
-    });
+      include: [
+        {
+          model: Markers,
+          model: User,
+        },
+      ],
+      ...req.body,
+        departure: req.body.departure,
+        trip_name: req.body.trip_name,
+        is_active: req.body.is_active,
+        is_shared: req.body.is_shared,
+        primary_owner: req.body.primary_owner,
+      },
+    );
 
     req.session.save(() => {
       req.session.loggedIn = true;

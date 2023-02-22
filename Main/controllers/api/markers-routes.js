@@ -20,64 +20,6 @@ router.get('/', async (req, res) => {
     }
 });
 
-// find marker by id
-// router.get('/:id', async (req, res) => {
-//     try {
-//         const markersData = await Markers.findOne({
-//             where: {
-//                 id: req.params.id,
-//             },
-//             include: [
-//                 {
-//                     model: Trips,
-//                     attributes: ['id', 'departure', 'trip_name', 'is_active', 'is_shared'],
-//                     include: {
-//                         model: User,
-//                         attributes: ['name']
-//                     }
-//                 },
-//             ]
-//         });
-
-//         if (!markersData) {
-//             res.status(404).json({ message: 'No marker found with that id' });
-//             return;
-//         }
-
-//         res.status(200).json(markersData);
-//     } catch (err) {
-//         res.status(500).json(err);
-//     }
-// });
-
-// router.get('/:id', (req, res) => {
-//     Markers.findOne({
-//         attributes: [ 'id', 'location', 'trip_id'],
-//         include: [
-//             {
-//                 model: Trips,
-//                 attributes: [ 'id', 'departure', 'trip_name', 'is_active', 'is_shared'],
-//                 include: {
-//                     model: User,
-//                     attributes: [ 'name' ]
-//                 }
-//             },
-//             // {
-//             //     model: User,
-//             //     attributes: [ 'name' ]
-//             // }
-//         ]
-//     })
-//     .then(markersData => {
-//         const markers = markersData.map(markers => markers.get({ plain: true }));
-//         res.render('homepage', { markers, loggedIn: req.session.loggedIn });
-//     })
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     });
-// });
-
 // create new marker
 router.post('/', async (req, res) => {
     try {

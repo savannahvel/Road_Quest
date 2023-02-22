@@ -12,12 +12,6 @@ Trips.init(
       primaryKey: true,
       autoIncrement: true,
     },
-
-    departure: {
-      type: DataTypes.DATE,
-      allowNull: false,
-     
-    },
     trip_name: {
       type: DataTypes.STRING,
       allowNull: false,
