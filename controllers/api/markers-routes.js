@@ -1,9 +1,9 @@
 const router = require('express').Router();
 const { Markers, Trips, User } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 // find all markers
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     try {
         const markersData = await Markers.findAll(
             {
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 });
 
 // create new marker
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const markersData = await Markers.create({
             location: req.body.location,
@@ -39,7 +39,7 @@ router.post('/', async (req, res) => {
 });
 
 // update marker by id 
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const markersData = await Markers.update(req.body, {
             where: {
@@ -59,7 +59,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // delete marker by id
-router.delete('/:id', async (req, res) => {
+router.delete('/:id',withAuth,  async (req, res) => {
     try {
         const markersData = await Markers.destroy({
             where: {

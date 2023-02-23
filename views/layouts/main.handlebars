@@ -34,14 +34,16 @@
             <ul>
                 <li>
                     <details role="list" dir="rtl">
+                        <form class="form logout-form" >
                         <summary class="container secondary" aria-haspopup="listbox" role="list" >Menu</summary>
                         <ul role="listbox">
                             {{!-- <li><a href="#" class="contrast">View Trips</a></li> --}}
                             <li><a href="/dashboard" class="contrast">Plan a Trip</a></li>
                             <li><a href="/sharedTrips" class="contrast">Shared Trips</a></li>
-                            <li><a href="#" class="contrast">Logout</a></li> 
+                            <li><a href="logout" type="submit" class="contrast">Logout</a></li> 
                             {{!-- on-click run function and logout page --}}
                         </ul>
+                        </form>
                     </details>
                 </li>
             </ul>
