@@ -49,7 +49,6 @@ router.post('/', withAuth, async (req, res) => {
         },
       ],
       ...req.body,
-        departure: req.body.departure,
         trip_name: req.body.trip_name,
         is_active: req.body.is_active,
         is_shared: req.body.is_shared,
