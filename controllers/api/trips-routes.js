@@ -13,7 +13,7 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 // find trip by id 
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const tripsData = await Trips.findOne({
       where: {

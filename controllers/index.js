@@ -15,5 +15,6 @@ router.use('/user', userRoutes);
 router.use('/', homeRoutes);
 router.use('/dashboard', dashboardRoutes);
 router.use('/sharedTrips', sharedTripRoutes);
+router.use('/logout', homeRoutes);
 
 module.exports = router;
