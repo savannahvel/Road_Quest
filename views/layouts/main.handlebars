@@ -30,31 +30,29 @@
          {{!-- Navbar --}}
         <nav class="container-fluid">
             {{!-- {{#if logged_in}} --}}
-            {{#if true}}
+            {{!-- {{#if true}} --}}
             <ul>
                 <li>
                     <details role="list" dir="rtl">
-                        <form class="form logout-form" >
                         <summary class="container secondary" aria-haspopup="listbox" role="list" >Menu</summary>
                         <ul role="listbox">
                             {{!-- <li><a href="#" class="contrast">View Trips</a></li> --}}
                             <li><a href="/dashboard" class="contrast">Plan a Trip</a></li>
                             <li><a href="/sharedTrips" class="contrast">Shared Trips</a></li>
-                            <li><a href="logout" type="submit" class="contrast">Logout</a></li> 
+                            <li><button class="contrast" id="logout">Logout</button></li> 
                             {{!-- on-click run function and logout page --}}
                         </ul>
-                        </form>
                     </details>
                 </li>
             </ul>
             <ul>
                 <li><strong>Road Quest</strong></li>
             </ul>
-            {{else}}
+            {{!-- {{else}} --}}
             <h1>
                 Road Quest
             </h1>
-            {{/if}}
+            {{!-- {{/if}} --}}
         </nav>
         {{!-- {{/if}} --}}
     </header>
@@ -66,9 +64,9 @@
     </footer>
 
     <!-- Only include the logout script if the user is logged in -->
-    {{#if logged_in}}
+    {{!-- {{#if logged_in}} --}}
     <script src="/js/logout.js"></script>
-    {{/if}}
+    {{!-- {{/if}} --}}
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 {{#unless SharedTripsAll}}
