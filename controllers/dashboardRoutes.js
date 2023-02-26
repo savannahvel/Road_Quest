@@ -1,15 +1,16 @@
 const router = require('express').Router();
 const { Trips } = require('../models');
+const withAuth = require('../utils/auth');
 
 // Pages seen once logged in
 
 // Get all user trips
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
     // Verify user is logged in
-    // if (!req.session.user_id) {
-    //     res.redirect('/login');
-    //     return;
-    // }
+    if (!req.session.logged_in) {
+        res.redirect('/login');
+        return;
+    }
 
     // Write get route that queries for all trips
     try {
@@ -26,6 +27,7 @@ router.get('/', async (req, res) => {
         }
         // res.render('all', { trips });
         res.render('dashboard', {
+            logged_in: true,
             style: 'route.css',
             script: 'routemap.js',
             title: 'Plan A Trip',

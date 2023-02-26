@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Road Quest</title>
-    
+
     <link rel="shortcut icon" href="https://picocss.com/favicon.ico">
     <link rel="canonical" href="https://picocss.com/examples/sign-in/">
-    
+
     <!-- Pico.css -->
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
-    
+
     <!-- Custom styles for this example -->
     <link rel="stylesheet" href="/css/{{style}}">
     {{!-- {{#if singleSharedTrip}}
@@ -20,52 +20,46 @@
     {{!-- Google Maps Api --}}
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry,places&key=AIzaSyAUPZyYJni5F1BhSHCcAAn10FC8pxlLI90&callback=initMap"></script>
-    
+
 </head>
 
 <body style="padding: 1rem;">
     <header style="padding: 1px;">
         <!-- Only display the logout button if the user is logged in -->
         {{!-- {{#if logged_in}} --}}
-         {{!-- Navbar --}}
+        {{!-- Navbar --}}
         <nav class="container-fluid">
-            {{!-- {{#if logged_in}} --}}
-            {{#if true}}
+            {{#if logged_in}}
             <ul>
                 <li>
                     <details role="list" dir="rtl">
-                        <form class="form logout-form" >
-                        <summary class="container secondary" aria-haspopup="listbox" role="list" >Menu</summary>
+                        <summary class="container secondary" aria-haspopup="listbox" role="list">Menu</summary>
                         <ul role="listbox">
                             {{!-- <li><a href="#" class="contrast">View Trips</a></li> --}}
                             <li><a href="/dashboard" class="contrast">View Trips</a></li>
                             <li><a href="/plan" class="contrast">Plan a Trip</a></li>
                             <li><a href="/sharedTrips" class="contrast">Shared Trips</a></li>
-                            <li><a href="logout" type="submit" class="contrast">Logout</a></li> 
+                            <li><button class="contrast" id="logout">Logout</button></li>
                             {{!-- on-click run function and logout page --}}
                         </ul>
-                        </form>
                     </details>
                 </li>
             </ul>
             <ul>
                 <li><strong>Road Quest</strong></li>
             </ul>
-            {{else}}
+            {{!-- {{else}} --}}
             <h1>
                 Road Quest
             </h1>
             {{/if}}
         </nav>
-        {{!-- {{/if}} --}}
     </header>
     <main style="padding: 1px;">
         {{{ body }}}
     </main>
     <footer>
-
     </footer>
-
     <!-- Only include the logout script if the user is logged in -->
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
@@ -75,4 +69,5 @@
 {{#unless SharedTripsAll}}
 <script src="/js/{{script}}"></script>
 {{/unless}}
+
 </html>
