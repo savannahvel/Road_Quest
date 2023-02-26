@@ -45,16 +45,18 @@ router.post('/', withAuth, async (req, res) => {
       include: [
         {
           model: Markers,
-          model: User,
+          // model: User,
         },
       ],
       ...req.body,
-        trip_name: req.body.trip_name,
-        is_active: req.body.is_active,
-        is_shared: req.body.is_shared,
-        primary_owner: req.body.primary_owner,
-      },
-    );
+      trip_name: req.body.trip_name,
+      start_point: req.body.start_point,
+      end_point: req.body.end_point,
+      is_active: req.body.is_active,
+      is_shared: req.body.is_shared,
+      primary_owner: req.body.primary_owner,
+      location: req.body.location,
+    });
 
     req.session.save(() => {
       req.session.loggedIn = true;

@@ -1,16 +1,22 @@
 [
   {
     "trip_name": "Teaxs trip",
+    "start_point": "Vancouver, B.C",
+    "end_point": "Boise, ID",
     "is_active": true,
     "is_shared": false
   },
   {
     "trip_name": "Las Vegas B-Day",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
     "is_active": false,
     "is_shared": true
   },
   {
     "trip_name":"New York Meeting",
+    "start_point": "Olympia, WA",
+    "end_point": "Tacoma, WA",
     "is_active":true,
     "is_shared": true
   }

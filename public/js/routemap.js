@@ -66,17 +66,38 @@ function saveRoute() {
           stopover:true});
     }
   }
-console.log(start);
+  console.log(start);
 
-console.log(end);
-
-
-waypts.push (start, end);
-
-console.log (waypts);
+  console.log(end);
 
 
+  waypts.push (start, end);
 
+  console.log(waypts);
+  createTrip(start, end);
+
+}
+
+function createTrip(startPoint, endPoint) {
+  const tripsBody = {
+    "trip_name": "something",
+    "is_shared": true,
+    "start_point": startPoint,
+    "end_point": endPoint,
+    "is_active": true,
+    "primary_owner": 1 // gotta find out where to get this info
+  }
+  
+  fetch('/trips', {
+    Method: 'POST',
+    Headers: {
+      Accept: 'application.json',
+      'Content-Type': 'application/json'
+    },
+    Body: tripsBody
+  }).then((response) => {
+    console.log(response)
+  })
 }
   
 google.maps.event.addDomListener(window, 'load', initMap);

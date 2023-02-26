@@ -1,0 +1,60 @@
+<div class="container">
+    <header>
+        <h2 id="page-title">{{title}}</h2>
+    </header>
+    <article style="margin-top: 1rem;">
+        <div class="parent">
+            <div class="div1" id="map-canvas"></div>
+            <div class="div2" id="control_panel">
+                <div style="margin:20px;border-width:2px;">
+                    <b>Start:</b>
+                    <select id="start">
+                        <option id="start1" value="Portland, OR">Portland, OR</option>
+                        <option id="start2" value="Astoria, OR">Astoria, OR</option>
+                        <option id="start3" value="Bend, OR">Bend, OR</option>
+                        <option id="start4" value="Hood River, OR">Hood River, OR</option>
+                        <option id="start5" value="Seattle, WA">Seattle, WA</option>
+                        <option id="start6" value="Tacoma, WA">Tacoma, WA</option>
+                        <option id="start7" value="Spokane, WA">Spokane, WA</option>
+                        <option id="start8" value="Olympia, WA">Olympia, WA</option>
+                        <option id="start9" value="Boise, ID">Boise, ID</option>
+                        <option id="start10" value="Vancouver, B.C">Vancouver, B.C</option>
+                    </select>
+                    <br>
+                    <b>Waypoints:</b> <br>
+                    <i>(Ctrl+Click for multiple selection)</i> <br>
+                    <select multiple id="waypoints">
+                        <option id="waypoint1" value="Portland, OR">Portland, OR</option>
+                        <option id="waypoint2" value="Astoria, OR">Astoria, OR</option>
+                        <option id="waypoint3" value="Bend, OR">Bend, OR</option>
+                        <option id="waypoint4" value="Hood River, OR">Hood River, OR</option>
+                        <option id="waypoint5" value="Seattle, WA">Seattle, WA</option>
+                        <option id="waypoint6" value="Tacoma, WA">Tacoma, WA</option>
+                        <option id="waypoint7" value="Spokane, WA">Spokane, WA</option>
+                        <option id="waypoint8" value="Olympia, WA">Olympia, WA</option>
+                        <option id="waypoint9" value="Boise, ID">Boise, ID</option>
+                        <option id="waypoint10" value="Vancouver, B.C">Vancouver, B.C</option>
+                    </select>
+                    <br>
+                    <b>End:</b>
+                    <select id="end">
+                        <option id="end1" value="Portland, OR">Portland, OR</option>
+                        <option id="end2" value="Astoria, OR">Astoria, OR</option>
+                        <option id="end3" value="Bend, OR">Bend, OR</option>
+                        <option id="end4" value="Hood River, OR">Hood River, OR</option>
+                        <option id="end5" value="Seattle, WA">Seattle, WA</option>
+                        <option id="end6" value="Tacoma, WA">Tacoma, WA</option>
+                        <option id="end7" value="Spokane, WA">Spokane, WA</option>
+                        <option id="end8" value="Olympia, WA">Olympia, WA</option>
+                        <option id="end9" value="Boise, ID">Boise, ID</option>
+                        <option id="end10" value="Vancouver, B.C">Vancouver, B.C</option>
+                    </select>
+                    <br>
+                    <input id="input" type="submit" value="Preview Route" onclick="calcRoute() ;">
+                    <input id="save" type="submit" value="Save" onclick="saveRoute();">
+                </div>
+                <div id="directions_panel"></div>
+            </div>
+        </div>
+    </article>
+</div>

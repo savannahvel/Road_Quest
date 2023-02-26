@@ -16,6 +16,14 @@ Trips.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    start_point: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    end_point: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     is_active: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
