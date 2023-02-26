@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
     //     return;
     // }
 
+    // get user
     try {
         const tripsData = await Trips.findAll({
             include: [{
@@ -30,11 +31,14 @@ router.get('/', async (req, res) => {
             return;
         }
 
-        res.render('sharedTrips', {
-            style: 'sharedTrips.css',
-            SharedTripsAll: true,
+        res.render('planTrips', {
+            logged_in: true,
+            style: 'route.css',
+            script: 'routemap.js',
+            title: 'Plan A Trip',
+            UpcomingTrip: true,
             trips,
-        })
+        });
 
     } catch (err) {
         res.status(500).json(err);
