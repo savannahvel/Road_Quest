@@ -3,7 +3,7 @@ const { Trips, Markers, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // find all trips
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const tripData = await Trips.findAll();
     res.status(200).json(tripData);
@@ -39,22 +39,24 @@ router.get('/:id', withAuth, async (req, res) => {
 });
 
 // create new trip
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const tripsData = await Trips.create({
       include: [
         {
           model: Markers,
-          model: User,
+          // model: User,
         },
       ],
       ...req.body,
-        trip_name: req.body.trip_name,
-        is_active: req.body.is_active,
-        is_shared: req.body.is_shared,
-        primary_owner: req.body.primary_owner,
-      },
-    );
+      trip_name: req.body.trip_name,
+      start_point: req.body.start_point,
+      end_point: req.body.end_point,
+      is_active: req.body.is_active,
+      is_shared: req.body.is_shared,
+      primary_owner: req.body.primary_owner,
+      location: req.body.location,
+    });
 
     req.session.save(() => {
       req.session.logged_in = true;

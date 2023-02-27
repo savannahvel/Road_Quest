@@ -17,11 +17,16 @@ router.get('/', async (req, res) => {
 
 // redirects user to homepage once logged in
 router.get('/login', (req, res) => {
-    if(req.session.logged_in) {
+    console.log(req.session);
+    if (req.session.logged_in) {
+        console.log(req.session);
         res.redirect('/');
         return;
     }
-    res.render('login');
+    res.render('login', {
+        style: 'signin.css',
+        script: 'login.js'
+    })
 });
 
 // sign up page
