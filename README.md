@@ -42,4 +42,6 @@ https://limitless-sea-80342.herokuapp.com/
 - Sam Jensen https://github.com/Samualjensen
 
 Image by <a href="https://www.freepik.com/free-vector/flat-travel-background_3765285.htm#query=road%20trip&position=19&from_view=keyword&track=sph">Freepik</a>
+
+Thank you to <a href="https://www.google.com/maps/">Google Maps</a> for the use of the API.
 ### Questions
