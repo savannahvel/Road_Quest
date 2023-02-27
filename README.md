@@ -24,6 +24,9 @@ git clone https://github.com/savannahvel/Road_Quest.git
 npm i
  ```
 ### Usage
+Login User Information: 
+Email: 123@gmail.com
+Password: password12345
 https://limitless-sea-80342.herokuapp.com/
 ![img](./assets/limitless-sea-80342.herokuapp.com_dashboard.png)
 ### License
