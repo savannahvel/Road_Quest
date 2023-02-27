@@ -14,9 +14,6 @@
 
     <!-- Custom styles for this example -->
     <link rel="stylesheet" href="/css/{{style}}">
-    {{!-- {{#if singleSharedTrip}}
-    <script src="/js/sharedTripsScripts.js"></script>
-    {{/if}} --}}
     {{!-- Google Maps Api --}}
     <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?v=3&libraries=geometry,places&key=AIzaSyAUPZyYJni5F1BhSHCcAAn10FC8pxlLI90&callback=initMap"></script>
@@ -25,22 +22,18 @@
 
 <body style="padding: 1rem;">
     <header style="padding: 1px;">
-        <!-- Only display the logout button if the user is logged in -->
-        {{!-- {{#if logged_in}} --}}
+        {{#if logged_in}}
         {{!-- Navbar --}}
         <nav class="container-fluid">
-            {{#if logged_in}}
             <ul>
                 <li>
                     <details role="list" dir="rtl">
                         <summary class="container secondary" aria-haspopup="listbox" role="list">Menu</summary>
                         <ul role="listbox">
-                            {{!-- <li><a href="#" class="contrast">View Trips</a></li> --}}
                             <li><a href="/dashboard" class="contrast">View Trips</a></li>
                             <li><a href="/planTrip" class="contrast">Plan a Trip</a></li>
                             <li><a href="/sharedTrips" class="contrast">Shared Trips</a></li>
-                            <li><button class="contrast" id="logout">Logout</button></li>
-                            {{!-- on-click run function and logout page --}}
+                            <li><a href="/logout" class="contrast">Logout</a></li>
                         </ul>
                     </details>
                 </li>
@@ -48,11 +41,11 @@
             <ul>
                 <li><strong>Road Quest</strong></li>
             </ul>
-            {{!-- {{else}} --}}
-            <h1>
-                Road Quest
-            </h1>
-            {{/if}}
+        {{else}}
+        <h1>
+            Road Quest
+        </h1>
+        {{/if}}
         </nav>
     </header>
     <main style="padding: 1px;">
@@ -66,7 +59,7 @@
     {{/if}}
 </body>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-{{#unless SharedTripsAll}}
+{{#unless showAllTrips}}
 <script src="/js/{{script}}"></script>
 {{/unless}}
 

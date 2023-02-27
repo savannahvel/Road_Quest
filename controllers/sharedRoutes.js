@@ -6,10 +6,10 @@ const { Trips, User } = require('../models');
 // Secondary user - show all shared routes to secondary user
 router.get('/', async (req, res) => {
     // Verify user is logged in
-    // if (!req.session.user_id) {
-    //     res.redirect('/login');
-    //     return;
-    // }
+    if (!req.session.user_id) {
+        res.redirect('/login');
+        return;
+    }
 
     try {
         const tripsData = await Trips.findAll({
@@ -34,8 +34,9 @@ router.get('/', async (req, res) => {
         }
 
         res.render('sharedTrips', {
-            style: 'sharedTrips.css',
-            SharedTripsAll: true,
+            logged_in: true,
+            style: 'allTrips.css',
+            showAllTrips: true,
             trips,
         })
 
@@ -48,10 +49,10 @@ router.get('/', async (req, res) => {
 // Get specific trip
 router.get('/:id', async (req, res) => {
     // Verify user is logged in
-    // if (!req.session.user_id) {
-    //     res.redirect('/login');
-    //     return;
-    // }
+    if (!req.session.user_id) {
+        res.redirect('/login');
+        return;
+    }
     try {
         const tripData = await Trips.findByPk(req.params.id, {
             include: [{
@@ -68,10 +69,10 @@ router.get('/:id', async (req, res) => {
         const trip = tripData.get({ plain: true });
 
         res.render('singleSharedTrip', {
+            logged_in: true,
             style: 'maps.css',
             script: 'markerMap.js',
             title: 'Shared Trip',
-            singleSharedTrip: true,
             trip,
         })
       } catch (err) {
