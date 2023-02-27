@@ -3,7 +3,7 @@ const { Trips, Markers, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // find all trips
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const tripData = await Trips.findAll();
     res.status(200).json(tripData);
@@ -39,7 +39,7 @@ router.get('/:id', withAuth, async (req, res) => {
 });
 
 // create new trip
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const tripsData = await Trips.create({
       include: [

@@ -7,6 +7,8 @@
             <div class="div1" id="map-canvas"></div>
             <div class="div2" id="control_panel">
                 <div style="margin:20px;border-width:2px;">
+                    <label for="trip-name" style="font-weight: bold">Trip name:</label>
+                    <input type="text" id="trip-name" name="trip-name">
                     <b>Start:</b>
                     <select id="start">
                         <option id="start1" value="Portland, OR">Portland, OR</option>
@@ -55,6 +57,7 @@
                 </div>
                 <div id="directions_panel"></div>
             </div>
+            <input type="text" value="{{userId}}" id="user-id" hidden>
         </div>
     </article>
 </div>

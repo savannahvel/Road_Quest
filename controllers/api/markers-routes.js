@@ -21,7 +21,7 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 // create new marker
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const markersData = await Markers.create({
             location: req.body.location,
