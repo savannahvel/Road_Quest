@@ -1,11 +1,202 @@
 [
-{
-    "location": "Vancouver, WA"
-},
-{
-    "location": "Eugene, OR"
-},
-{
-    "location": "Gresham, OR"
-}
+    {
+        "location": "Vancouver, WA"
+    },
+    {
+        "location": "Eugene, OR"
+    },
+    {
+        "location": "Gresham, OR"
+    }, 
+
+    {
+        "location": "Seattle, WA"
+    },
+    {
+        "location": "Portland, OR"
+    },
+    {
+        "location": "Vancouver, BC"
+    },
+    {
+        "location": "Tacoma, WA"
+    },
+    {
+        "location": "Bellevue, WA"
+    },
+    {
+        "location": "Olympia, WA"
+    },
+    {
+        "location": "Salem, OR"
+    },
+    {
+        "location": "Spokane, WA"
+    },
+    {
+        "location": "Bellingham, WA"
+    },
+    {
+        "location": "Coeur d'Alene, ID"
+    },
+    {
+        "location": "Redmond, WA"
+    },
+    {
+        "location": "Anchorage, AK"
+    },
+    {
+        "location": "Corvallis, OR"
+    }, 
+
+    {
+        "location": "New York City, NY"
+    },
+    {
+        "location": "Los Angeles, CA"
+    },
+    {
+        "location": "Chicago, IL"
+    },
+    {
+        "location": "Houston, TX"
+    },
+    {
+        "location": "Phoenix, AZ"
+    },
+    {
+        "location": "Philadelphia, PA"
+    },
+    {
+        "location": "San Antonio, TX"
+    },
+    {
+        "location": "San Diego, CA"
+    },
+    {
+        "location": "Dallas, TX"
+    },
+    {
+        "location": "San Jose, CA"
+    },
+    {
+        "location": "Austin, TX"
+    },
+    {
+        "location": "Jacksonville, FL"
+    },
+    {
+        "location": "Fort Worth, TX"
+    },
+    {
+        "location": "Columbus, OH"
+    },
+    {
+        "location": "San Francisco, CA"
+    },
+    {
+        "location": "Charlotte, NC"
+    },
+    {
+        "location": "Indianapolis, IN"
+    },
+    {
+        "location": "Denver, CO"
+    },
+    {
+        "location": "Washington, D.C."
+    },
+    {
+        "location": "Boston, MA"
+    },
+    {
+        "location": "Nashville, TN"
+    },
+    {
+        "location": "El Paso, TX"
+    },
+    {
+        "location": "Detroit, MI"
+    },
+    {
+        "location": "Memphis, TN"
+    },
+    {
+        "location": "Salt Lake City, UT"
+    },
+    {
+        "location": "Las Vegas, NV"
+    },
+    {
+        "location": "Louisville, KY"
+    },
+    {
+        "location": "Baltimore, MD"
+    },
+    {
+        "location": "Milwaukee, WI"
+    },
+    {
+        "location": "Albuquerque, NM"
+    },
+    {
+        "location": "Tucson, AZ"
+    },
+    {
+        "location": "Fresno, CA"
+    },
+    {
+        "location": "Sacramento, CA"
+    },
+    {
+        "location": "Mesa, AZ"
+    },
+    {
+        "location": "Atlanta, GA"
+    },
+    {
+        "location": "Kansas City, MO"
+    },
+    {
+        "location": "Colorado Springs, CO"
+    },
+    {
+        "location": "Miami, FL"
+    },
+    {
+        "location": "Raleigh, NC"
+    },
+    {
+        "location": "Omaha, NE"
+    },
+    {
+        "location": "Long Beach, CA"
+    },
+    {
+        "location": "Virginia Beach, VA"
+    },
+    {
+        "location": "Oakland, CA"
+    },
+    {
+        "location": "Minneapolis, MI"
+    },
+    {
+        "location": "Tulsa, OK"
+    },
+    {
+        "location": "Wichita, KS"
+    },
+    {
+        "location": "New Orleans, LA"
+    },
+    {
+        "location": "Arlington, TX"
+    },
+    {
+        "location": "St. George, UT"
+    },
+    {
+        "location": "Shreveport, LA"
+    }
 ]

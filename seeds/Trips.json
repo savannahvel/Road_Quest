@@ -19,5 +19,139 @@
     "end_point": "Tacoma, WA",
     "is_active":true,
     "is_shared": true
+  },
+
+  {
+    "trip_name": "Coastal Adventure",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Mountain Escape",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "City Hopping",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "National Park Tour",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Wine Country Getaway",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Island Paradise",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Rocky Mountain High",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Rocky Coast Road Trip",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Alpine Adventure",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Road Trip USA",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Lake Expedition",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Crater Lake Trip",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Fam Road Trip",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Visiting Friends",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Skiing Adventure",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Tropical Retreat",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Southern Charm Tour",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Wilderness Adventure",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
+  },
+  {
+    "trip_name": "Rockies",
+    "start_point": "Bend, OR",
+    "end_point": "Astoria, OR",
+    "is_active": true,
+    "is_shared": true
   }
 ]
